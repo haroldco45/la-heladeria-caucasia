@@ -1,0 +1,15 @@
+{
+  "name": "La Heladería · Caucasia",
+  "short_name": "La Heladería",
+  "description": "Cuchareables y helados en La Ye, Caucasia. Pide por WhatsApp.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FDF8F0",
+  "theme_color": "#720A09",
+  "lang": "es-CO",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

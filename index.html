@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Heladería · Cuchareables y helados en Caucasia</title>
+<meta name="description" content="Cuchareables de maracuyá, pistacho, Kinder Bueno, Oreo, Milo y más en La Ye, Caucasia. Pide por WhatsApp: 321 794 98 91.">
+<meta name="theme-color" content="#720A09">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- Vista previa al compartir -->
+<meta property="og:title" content="La Heladería · Cuchareables en Caucasia">
+<meta property="og:description" content="Maracuyá, pistacho, Kinder Bueno, Oreo, Milo Cronch y más. Desde $6.000. Pide por WhatsApp.">
+<meta property="og:image" content="https://la-heladeria-caucasia.netlify.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://la-heladeria-caucasia.netlify.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La Heladería · Cuchareables en Caucasia">
+<meta name="twitter:description" content="Maracuyá, pistacho, Kinder Bueno, Oreo, Milo Cronch y más. Desde $6.000. Pide por WhatsApp.">
+<meta name="twitter:image" content="https://la-heladeria-caucasia.netlify.app/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--vino:#720A09;--vino2:#9B1716;--crema:#FDF8F0;--arena:#F3E8D8;--cafe:#3B1F17;--verde:#2F6B3A;--oro:#E3A72F;--gris:#7A6A62}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--crema);color:var(--cafe);overflow-x:hidden;padding-bottom:84px}
+img{display:block;max-width:100%}
+a{color:inherit}
+.serif{font-family:'Playfair Display',serif}
+.script{font-family:Caveat,cursive}
+
+/* Barra superior */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;transition:.3s}
+.top.solid{background:rgba(114,10,9,.96);box-shadow:0 4px 20px rgba(0,0,0,.25)}
+.top .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
+.top .brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.5)}
+.top .brand b{font-family:'Playfair Display';letter-spacing:2px;font-size:15px}
+.lang{display:flex;border:1px solid rgba(255,255,255,.7);border-radius:30px;overflow:hidden}
+.lang button{background:none;border:0;color:#fff;font:600 12px Poppins;padding:6px 11px;cursor:pointer}
+.lang button.on{background:#fff;color:var(--vino)}
+
+/* Portada */
+.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;color:#fff}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.12);transition:opacity 1.4s ease}
+.slide.on{opacity:1;animation:kb 7s linear forwards}
+@keyframes kb{from{transform:scale(1.15)}to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(60,5,5,.55) 0%,rgba(60,5,5,.15) 35%,rgba(70,6,6,.92) 100%)}
+.hero .in{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:0 22px 40px}
+.estado{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:30px;font-size:12.5px;font-weight:500;margin-bottom:14px}
+.punto{width:9px;height:9px;border-radius:50%;background:#46d36b;box-shadow:0 0 0 0 rgba(70,211,107,.7);animation:pulso 1.6s infinite}
+.punto.off{background:#ff8d7a;animation:none}
+@keyframes pulso{70%{box-shadow:0 0 0 10px rgba(70,211,107,0)}100%{box-shadow:0 0 0 0 rgba(70,211,107,0)}}
+.hero h1{font-family:'Playfair Display';font-size:clamp(40px,11vw,72px);line-height:.98;font-weight:800}
+.hero h1 span{display:block;font-family:Caveat;font-weight:700;color:#FFD9A0;font-size:.62em;margin-top:6px}
+.hero p{margin:14px 0 22px;font-weight:300;font-size:15px;max-width:460px;opacity:.95}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;font:600 14px Poppins;padding:14px 22px;border-radius:40px;text-decoration:none;transition:transform .15s}
+.btn:active{transform:scale(.96)}
+.btn.blanco{background:#fff;color:var(--vino)}
+.btn.borde{background:transparent;color:#fff;border:1.5px solid #fff}
+.btn.vino{background:var(--vino);color:#fff}
+.btn.verde{background:var(--verde);color:#fff}
+.dots{position:absolute;z-index:3;right:20px;top:50%;display:flex;flex-direction:column;gap:7px}
+.dots i{width:6px;height:18px;border-radius:4px;background:rgba(255,255,255,.4);transition:.3s}
+.dots i.on{background:#fff;height:30px}
+
+/* Cinta */
+.cinta{background:var(--vino);color:#fff;overflow:hidden;white-space:nowrap;padding:11px 0;font-family:'Playfair Display';font-size:15px;letter-spacing:1px}
+.cinta div{display:inline-block;animation:corre 28s linear infinite}
+.cinta span{margin:0 22px}
+.cinta em{font-style:normal;color:#FFD9A0}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+section{padding:56px 18px}
+.tit{text-align:center;margin-bottom:28px}
+.tit small{display:block;font-family:Caveat;font-size:24px;color:var(--vino2)}
+.tit h2{font-family:'Playfair Display';font-size:clamp(30px,8vw,44px);letter-spacing:3px;color:#8a7766;text-transform:uppercase}
+.tit p{color:var(--gris);font-size:14px;margin-top:6px}
+.wrap{max-width:1100px;margin:0 auto}
+
+/* Tamaños */
+.tams{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:560px;margin:0 auto 28px}
+.tam{background:#fff;border:1.5px solid #ead9c4;border-radius:18px;padding:14px 6px;text-align:center;cursor:pointer;transition:.25s}
+.tam b{display:block;font-family:'Playfair Display';font-size:19px}
+.tam span{font-size:11.5px;color:var(--gris)}
+.tam strong{display:block;margin-top:4px;color:var(--vino);font-size:16px}
+.tam.on{background:var(--vino);border-color:var(--vino);color:#fff;transform:translateY(-3px);box-shadow:0 10px 24px rgba(114,10,9,.3)}
+.tam.on span,.tam.on strong{color:#ffe2c2}
+
+/* Sabores */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr);gap:20px}}
+.card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(59,31,23,.09);opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
+.card.ver{opacity:1;transform:none}
+.card .foto{position:relative;aspect-ratio:3/4;overflow:hidden}
+.card .foto img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.card:hover .foto img{transform:scale(1.08)}
+.card .tag{position:absolute;top:10px;left:10px;background:var(--oro);color:#3b1f17;font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase}
+.card .cuerpo{padding:12px 12px 14px}
+.card h3{font-family:'Playfair Display';font-size:18px;line-height:1.1}
+.card p{font-size:12px;color:var(--gris);margin:4px 0 10px;min-height:34px}
+.card .fila{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.card .precio{font-weight:700;color:var(--vino);font-size:16px}
+.card .precio small{display:block;font-weight:400;color:var(--gris);font-size:10.5px}
+.add{background:var(--vino);color:#fff;border:0;border-radius:30px;font:600 12.5px Poppins;padding:9px 14px;cursor:pointer}
+.add.ok{background:var(--verde)}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--vino);background:#fff;color:var(--vino);font:700 16px Poppins;cursor:pointer}
+.qty b{min-width:16px;text-align:center}
+
+/* Helados */
+.helados{background:linear-gradient(180deg,var(--arena),var(--crema))}
+.carril{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 18px;-webkit-overflow-scrolling:touch}
+.carril::-webkit-scrollbar{height:0}
+.carril figure{flex:0 0 72%;max-width:320px;scroll-snap-align:center;border-radius:24px;overflow:hidden;position:relative;aspect-ratio:3/4;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.carril figure img{width:100%;height:100%;object-fit:cover}
+.carril figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 16px;background:linear-gradient(transparent,rgba(50,5,5,.85));color:#fff;font-family:'Playfair Display';font-size:20px}
+.carril figcaption small{display:block;font-family:Poppins;font-size:12px;opacity:.85}
+.centro{text-align:center;margin-top:10px}
+
+/* Eventos */
+.eventos{background:var(--vino);color:#fff;position:relative;overflow:hidden}
+.eventos .tit h2{color:#fff}.eventos .tit small{color:#FFD9A0}.eventos .tit p{color:#f4d6d0}
+.ev{display:grid;gap:22px;align-items:center}
+@media(min-width:800px){.ev{grid-template-columns:1fr 1fr}}
+.ev img{border-radius:24px;box-shadow:0 20px 40px rgba(0,0,0,.35);max-height:520px;margin:0 auto;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
+.chip{border:1.5px solid rgba(255,255,255,.6);background:none;color:#fff;font:500 13px Poppins;padding:8px 14px;border-radius:30px;cursor:pointer}
+.chip.on{background:#fff;color:var(--vino)}
+.campo{margin-bottom:12px}
+.campo label{display:block;font-size:12.5px;margin-bottom:5px;opacity:.9}
+.campo input,.campo textarea,.campo select{width:100%;padding:13px 14px;border-radius:14px;border:1.5px solid #e5d4c2;font:400 15px Poppins;background:#fff;color:var(--cafe)}
+.eventos .campo input,.eventos .campo textarea{border-color:transparent}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* Galería */
+.gal{columns:2;column-gap:10px}
+@media(min-width:700px){.gal{columns:4}}
+.gal img{width:100%;margin-bottom:10px;border-radius:16px;break-inside:avoid;cursor:zoom-in;transition:filter .3s}
+.gal img:hover{filter:brightness(1.08)}
+.visor{position:fixed;inset:0;background:rgba(20,4,4,.94);z-index:90;display:none;align-items:center;justify-content:center;padding:20px}
+.visor.on{display:flex}
+.visor img{max-height:88vh;border-radius:14px}
+.visor button{position:absolute;top:16px;right:16px;background:#fff;color:var(--vino);border:0;border-radius:30px;padding:8px 16px;font:600 13px Poppins}
+
+/* Visítanos */
+.visita{display:grid;gap:18px}
+@media(min-width:800px){.visita{grid-template-columns:1fr 1fr}}
+.horario{background:#fff;border-radius:24px;padding:22px;box-shadow:0 6px 22px rgba(59,31,23,.08)}
+.horario h3{font-family:'Playfair Display';font-size:22px;margin-bottom:12px;color:var(--vino)}
+.hrow{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed #e3d2bf;font-size:14px}
+.hrow.hoy{color:var(--vino);font-weight:600}
+.dir{margin-top:16px;font-size:14px;line-height:1.6}
+.mapa{border-radius:24px;overflow:hidden;min-height:300px;box-shadow:0 6px 22px rgba(59,31,23,.08)}
+.mapa iframe{width:100%;height:100%;min-height:300px;border:0}
+
+/* Pedido flotante */
+.barra{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;background:var(--cafe);color:#fff;border-radius:22px;padding:12px 14px 12px 18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 14px 30px rgba(0,0,0,.35);transform:translateY(140%);transition:transform .35s}
+.barra.on{transform:none}
+.barra b{font-size:16px}.barra small{display:block;font-size:11.5px;opacity:.8}
+.hoja{position:fixed;inset:0;z-index:80;background:rgba(30,8,6,.55);display:none;align-items:flex-end}
+.hoja.on{display:flex}
+.hoja .panel{background:var(--crema);width:100%;max-height:92vh;overflow:auto;border-radius:26px 26px 0 0;padding:22px 18px 28px;animation:sube .3s}
+@keyframes sube{from{transform:translateY(100%)}}
+@media(min-width:700px){.hoja{align-items:center;justify-content:center}.hoja .panel{max-width:520px;border-radius:26px}}
+.panel h3{font-family:'Playfair Display';font-size:24px;color:var(--vino);margin-bottom:12px}
+.item{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #ecdccb}
+.item img{width:52px;height:52px;border-radius:12px;object-fit:cover}
+.item div{flex:1;font-size:13.5px}.item div small{color:var(--gris)}
+.total{display:flex;justify-content:space-between;font-size:18px;font-weight:700;margin:14px 0}
+.seg{display:flex;background:#efe2d2;border-radius:30px;padding:4px;margin-bottom:12px}
+.seg button{flex:1;border:0;background:none;padding:10px;border-radius:26px;font:600 13px Poppins;color:var(--cafe);cursor:pointer}
+.seg button.on{background:var(--vino);color:#fff}
+.habeas{font-size:11.5px;color:var(--gris);display:flex;gap:8px;align-items:flex-start;margin:6px 0 14px;line-height:1.45}
+.habeas input{margin-top:3px;accent-color:var(--vino)}
+.cerrar{float:right;background:none;border:0;font:600 13px Poppins;color:var(--gris);cursor:pointer}
+.vacio{color:var(--gris);font-size:14px;padding:16px 0}
+.aviso{font-size:12px;color:var(--gris);margin-bottom:10px}
+
+footer{background:#2a120d;color:#e9d9cc;text-align:center;padding:36px 18px 30px;font-size:12.5px;line-height:1.7}
+footer img{width:84px;margin:0 auto 12px;border-radius:50%}
+footer a{color:#FFD9A0}
+footer .vibras{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font-size:11.5px;opacity:.85}
+.instalar{display:none;margin:14px auto 0}
+.toast{position:fixed;left:50%;top:80px;transform:translateX(-50%) translateY(-20px);background:var(--verde);color:#fff;padding:10px 18px;border-radius:30px;font-size:13px;opacity:0;transition:.3s;z-index:99;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%)}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="brand" href="#inicio"><img src="img/logo.jpg" alt="La Heladería"><b>LA HELADERÍA</b></a>
+  <div class="lang"><button data-l="es" class="on">ES</button><button data-l="en">EN</button></div>
+</header>
+
+<section class="hero" id="inicio" style="padding:0">
+  <div class="slide on" style="background-image:url(img/pistacho.jpg)"></div>
+  <div class="slide" style="background-image:url(img/maracuya.jpg)"></div>
+  <div class="slide" style="background-image:url(img/kinder.jpg)"></div>
+  <div class="slide" style="background-image:url(img/chocolate.jpg)"></div>
+  <div class="slide" style="background-image:url(img/helado-pistacho.jpg)"></div>
+  <div class="slide" style="background-image:url(img/domo-calle.jpg)"></div>
+  <div class="dots" id="dots"></div>
+  <div class="in">
+    <div class="estado"><i class="punto" id="punto"></i><span id="estado">...</span></div>
+    <h1><b data-t="heroA" style="font-weight:800">Cuchareables</b><span data-t="heroB">un bocado de felicidad</span></h1>
+    <p data-t="heroP">Capas de bizcocho, crema suave y los toppings que más te gustan. Hechos a mano en La Ye, Caucasia.</p>
+    <div class="btns">
+      <a class="btn blanco" href="#sabores" data-t="verMenu">Ver sabores y pedir</a>
+      <a class="btn borde" href="#visitanos" data-t="comoLlegar">Cómo llegar</a>
+    </div>
+  </div>
+</section>
+
+<div class="cinta"><div id="cinta"></div></div>
+
+<section id="sabores">
+ <div class="wrap">
+  <div class="tit"><small data-t="sabSmall">escoge el tuyo</small><h2 data-t="sabH">Sabores</h2><p data-t="sabP">Primero elige el tamaño; el precio es el mismo para todos los sabores.</p></div>
+  <div class="tams" id="tams"></div>
+  <div class="grid" id="grid"></div>
+ </div>
+</section>
+
+<section class="helados" id="helados">
+ <div class="wrap">
+  <div class="tit"><small data-t="helSmall">también tenemos</small><h2 data-t="helH">Helados</h2><p data-t="helP">Helado cremoso en vaso, bañado y con toppings. Pregunta por los sabores del día.</p></div>
+  <div class="carril" id="carril"></div>
+  <div class="centro"><a class="btn vino" id="btnHelado" target="_blank" rel="noopener" data-t="helBtn">Preguntar sabores del día</a></div>
+ </div>
+</section>
+
+<section class="eventos" id="eventos">
+ <div class="wrap ev">
+  <img src="img/mini-cucharables.jpg" alt="Mini cucharables para eventos" loading="lazy">
+  <div>
+   <div class="tit" style="text-align:left"><small data-t="evSmall">para tu celebración</small><h2 data-t="evH">Mini cucharables</h2><p data-t="evP">Ideales para cumpleaños, matrimonios, grados, baby showers y más. Cuéntanos tu evento y te cotizamos.</p></div>
+   <div class="chips" id="chips"></div>
+   <div class="dos">
+     <div class="campo"><label data-t="evCant">¿Cuántas unidades?</label><input id="evCant" type="number" min="10" placeholder="50"></div>
+     <div class="campo"><label data-t="evFecha">Fecha del evento</label><input id="evFecha" type="date"></div>
+   </div>
+   <div class="campo"><label data-t="evNota">Sabores o detalles (opcional)</label><textarea id="evNota" rows="2"></textarea></div>
+   <button class="btn blanco" id="btnCotizar" data-t="evBtn">Cotizar por WhatsApp</button>
+  </div>
+ </div>
+</section>
+
+<section id="galeria">
+ <div class="wrap">
+  <div class="tit"><small data-t="galSmall">así se ven de verdad</small><h2 data-t="galH">Galería</h2></div>
+  <div class="gal" id="gal"></div>
+  <div class="centro" style="margin-top:16px"><a class="btn vino" href="https://www.instagram.com/laheladeria.09/" target="_blank" rel="noopener" data-t="ig">Síguenos en Instagram @laheladeria.09</a></div>
+ </div>
+</section>
+
+<section id="visitanos" style="background:var(--arena)">
+ <div class="wrap">
+  <div class="tit"><small data-t="visSmall">te esperamos</small><h2 data-t="visH">Visítanos</h2></div>
+  <div class="visita">
+   <div class="horario">
+     <h3 data-t="horH">Horario de atención</h3>
+     <div class="hrow" id="hLV"><span data-t="lv">Lunes a viernes</span><b>11:00 a. m. – 8:00 p. m.</b></div>
+     <div class="hrow" id="hSD"><span data-t="sd">Sábados, domingos y festivos</span><b>11:00 a. m. – 6:00 p. m.</b></div>
+     <div class="dir">
+       <b data-t="dirH">Dirección</b><br>
+       <span data-t="dir">Calle 29 con Carrera 19, detrás de Promedan, sector La Ye, Caucasia (Antioquia).</span><br><br>
+       <b>WhatsApp:</b> <a href="tel:+573217949891">321 794 98 91</a><br>
+       <b>Instagram:</b> <a href="https://www.instagram.com/laheladeria.09/" target="_blank" rel="noopener">@laheladeria.09</a>
+     </div>
+     <div class="btns" style="margin-top:16px">
+       <a class="btn vino" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Calle+29+Carrera+19+La+Ye+Caucasia+Antioquia" data-t="abrirMapa">Abrir en Google Maps</a>
+       <a class="btn verde" id="btnWaDir" target="_blank" rel="noopener" data-t="escribenos">Escríbenos</a>
+     </div>
+   </div>
+   <div class="mapa"><iframe loading="lazy" title="Mapa" src="https://www.google.com/maps?q=Calle+29+Carrera+19+Caucasia+Antioquia&output=embed"></iframe></div>
+  </div>
+ </div>
+</section>
+
+<footer>
+  <img src="img/logo.jpg" alt="La Heladería">
+  <div><b>LA HELADERÍA</b> · Caucasia, Antioquia</div>
+  <div>WhatsApp 321 794 98 91 · <a href="https://www.instagram.com/laheladeria.09/" target="_blank" rel="noopener">@laheladeria.09</a></div>
+  <button class="btn blanco instalar" id="btnInstalar" data-t="instalar">Instalar la app en mi celular</button>
+  <div class="vibras">
+    Desarrollada por <a href="https://vibraspositivashm.com" target="_blank" rel="noopener">Vibras Positivas HM</a> — Derechos de Autor Reservados<br>
+    <span data-t="licencia">Licencia vigente: 7 de noviembre de 2026 al 7 de mayo de 2027</span> · ExpoCaucasia 2026
+  </div>
+</footer>
+
+<div class="barra" id="barra">
+  <div><b id="bTotal">$0</b><small id="bCant">0 productos</small></div>
+  <button class="btn blanco" id="verPedido" data-t="verPedido">Ver mi pedido</button>
+</div>
+
+<div class="hoja" id="hoja">
+ <div class="panel">
+  <button class="cerrar" id="cerrarHoja" data-t="cerrar">Cerrar</button>
+  <h3 data-t="miPedido">Mi pedido</h3>
+  <div id="items"></div>
+  <div class="total"><span>Total</span><span id="tTotal">$0</span></div>
+  <div class="seg" id="entrega"><button class="on" data-v="recoger" data-t="recoger">Recojo en el local</button><button data-v="domicilio" data-t="domicilio">Domicilio</button></div>
+  <p class="aviso" id="avisoDom" style="display:none" data-t="avisoDom">El valor del domicilio se acuerda por WhatsApp según tu barrio.</p>
+  <div class="campo"><label data-t="nombre">Tu nombre</label><input id="cNombre" autocomplete="name"></div>
+  <div class="campo" id="campoDir" style="display:none"><label data-t="direccion">Dirección y barrio</label><input id="cDir" autocomplete="street-address"></div>
+  <div class="campo"><label data-t="notas">Notas (opcional)</label><input id="cNotas"></div>
+  <label class="habeas"><input type="checkbox" id="cHabeas"><span data-t="habeas">Autorizo a La Heladería a usar mi nombre y dirección solo para atender este pedido, según la Ley 1581 de 2012 (Habeas Data). Esta app no guarda tus datos: se envían directo por WhatsApp.</span></label>
+  <button class="btn verde" style="width:100%" id="enviar" data-t="enviar">Enviar pedido por WhatsApp</button>
+ </div>
+</div>
+
+<div class="visor" id="visor"><button id="cerrarVisor" data-t="cerrar">Cerrar</button><img id="visorImg" alt=""></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const WA='573217949891';
+const TAM=[
+ {id:'p',oz:5,es:'Pequeño',en:'Small',precio:6000},
+ {id:'g',oz:8,es:'Grande',en:'Large',precio:12000},
+ {id:'m',oz:12,es:'MAXI',en:'MAXI',precio:14000}];
+const SAB=[
+ {id:'maracuya',n:'Maracuyá',img:'maracuya',tag:{es:'Favorito',en:'Favorite'},es:'Suave, cremoso, acidito y dulcecito.',en:'Smooth, creamy, a little tangy and sweet.'},
+ {id:'pistacho',n:'Pistacho',img:'pistacho',tag:{es:'Nuevo',en:'New'},es:'Crema de pistacho y pistachos tostados.',en:'Pistachio cream with roasted pistachios.'},
+ {id:'kinder',n:'Kinder Bueno',img:'kinder',es:'Crema de avellana, galleta y trozos de Kinder.',en:'Hazelnut cream, cookie crumbs and Kinder pieces.'},
+ {id:'chocolate',n:'Chocolate',img:'chocolate',es:'Crema de chocolate, salsa y chips.',en:'Chocolate cream, sauce and chips.'},
+ {id:'chocoklim',n:'Chocoklim',img:'chocoklim',es:'Crema de leche Klim, arequipe y chips de chocolate.',en:'Klim milk cream, dulce de leche and choc chips.'},
+ {id:'oreo',n:'Oreo',img:'oreo',es:'Crema blanca con galleta Oreo triturada.',en:'White cream with crushed Oreo cookies.'},
+ {id:'arequipe',n:{es:'Arequipe maní',en:'Arequipe & peanut'},img:'arequipe',es:'Arequipe, maní crocante y chips.',en:'Dulce de leche, crunchy peanuts and chips.'},
+ {id:'milo',n:'Milo Cronch',img:'milo',es:'Crema de Milo con crocante y chips.',en:'Milo cream with crunch and chips.'}];
+const HEL=[
+ {img:'helado-pistacho',es:'Helado de pistacho',en:'Pistachio ice cream'},
+ {img:'helado-choco',es:'Helado bañado en chocolate',en:'Chocolate-dipped ice cream'},
+ {img:'helado-pistacho2',es:'Pistacho con trozos',en:'Pistachio with nuts'},
+ {img:'helado-choco2',es:'Arequipe y chocolate',en:'Caramel & chocolate'}];
+const GAL=['domo-calle','chocoklim2','vaso-maxi','vaso-domo','maracuya','kinder','pistacho','chocolate','helado-choco','helado-pistacho','chocoklim','pendon','mini-cucharables','horario'];
+const EV={es:['Cumpleaños','Matrimonio','Grado','Baby shower','Empresa','Otro'],en:['Birthday','Wedding','Graduation','Baby shower','Company','Other']};
+
+const T={
+es:{verMenu:'Ver sabores y pedir',comoLlegar:'Cómo llegar',heroA:'Cuchareables',heroB:'un bocado de felicidad',heroP:'Capas de bizcocho, crema suave y los toppings que más te gustan. Hechos a mano en La Ye, Caucasia.',sabSmall:'escoge el tuyo',sabH:'Sabores',sabP:'Primero elige el tamaño; el precio es el mismo para todos los sabores.',helSmall:'también tenemos',helH:'Helados',helP:'Helado cremoso en vaso, bañado y con toppings. Pregunta por los sabores del día.',helBtn:'Preguntar sabores del día',evSmall:'para tu celebración',evH:'Mini cucharables',evP:'Ideales para cumpleaños, matrimonios, grados, baby showers y más. Cuéntanos tu evento y te cotizamos.',evCant:'¿Cuántas unidades?',evFecha:'Fecha del evento',evNota:'Sabores o detalles (opcional)',evBtn:'Cotizar por WhatsApp',galSmall:'así se ven de verdad',galH:'Galería',ig:'Síguenos en Instagram @laheladeria.09',visSmall:'te esperamos',visH:'Visítanos',horH:'Horario de atención',lv:'Lunes a viernes',sd:'Sábados, domingos y festivos',dirH:'Dirección',dir:'Calle 29 con Carrera 19, detrás de Promedan, sector La Ye, Caucasia (Antioquia).',abrirMapa:'Abrir en Google Maps',escribenos:'Escríbenos',instalar:'Instalar la app en mi celular',licencia:'Licencia vigente: 7 de noviembre de 2026 al 7 de mayo de 2027',verPedido:'Ver mi pedido',cerrar:'Cerrar',miPedido:'Mi pedido',recoger:'Recojo en el local',domicilio:'Domicilio',avisoDom:'El valor del domicilio se acuerda por WhatsApp según tu barrio.',nombre:'Tu nombre',direccion:'Dirección y barrio',notas:'Notas (opcional)',habeas:'Autorizo a La Heladería a usar mi nombre y dirección solo para atender este pedido, según la Ley 1581 de 2012 (Habeas Data). Esta app no guarda tus datos: se envían directo por WhatsApp.',enviar:'Enviar pedido por WhatsApp',
+ agregar:'Agregar',agregado:'Agregado',prod:'productos',prod1:'producto',vacio:'Aún no has agregado nada. Escoge un sabor y un tamaño.',abierto:'Abierto ahora · cierra a las ',cerrado:'Cerrado ahora · abre ',hoyA:'hoy a las 11:00 a. m.',mananaA:'mañana a las 11:00 a. m.',festivo:' (festivo)',faltaNombre:'Escribe tu nombre',faltaDir:'Escribe la dirección del domicilio',faltaHabeas:'Acepta la autorización de datos',addOk:'Agregado a tu pedido',desde:'desde',
+ cinta:['Maracuyá','Pistacho','Kinder Bueno','Oreo','Milo Cronch','Chocoklim','Chocolate','Arequipe maní','Desde $6.000','Domicilios en Caucasia']},
+en:{verMenu:'See flavors & order',comoLlegar:'Directions',heroA:'Spoonable desserts',heroB:'a bite of happiness',heroP:'Layers of cake, smooth cream and your favorite toppings. Handmade in La Ye, Caucasia.',sabSmall:'pick yours',sabH:'Flavors',sabP:'Choose the size first; the price is the same for every flavor.',helSmall:'we also have',helH:'Ice cream',helP:'Creamy ice cream in a cup, dipped and topped. Ask about today\'s flavors.',helBtn:'Ask about today\'s flavors',evSmall:'for your celebration',evH:'Mini spoonables',evP:'Perfect for birthdays, weddings, graduations, baby showers and more. Tell us about your event and we\'ll send a quote.',evCant:'How many units?',evFecha:'Event date',evNota:'Flavors or details (optional)',evBtn:'Get a quote on WhatsApp',galSmall:'the real thing',galH:'Gallery',ig:'Follow us on Instagram @laheladeria.09',visSmall:'come see us',visH:'Visit us',horH:'Opening hours',lv:'Monday to Friday',sd:'Saturday, Sunday & holidays',dirH:'Address',dir:'Calle 29 & Carrera 19, behind Promedan, La Ye area, Caucasia (Antioquia), Colombia.',abrirMapa:'Open in Google Maps',escribenos:'Message us',instalar:'Install the app on my phone',licencia:'License valid: November 7, 2026 to May 7, 2027',verPedido:'View my order',cerrar:'Close',miPedido:'My order',recoger:'Pick up',domicilio:'Delivery',avisoDom:'Delivery fee is agreed on WhatsApp depending on your neighborhood.',nombre:'Your name',direccion:'Address & neighborhood',notas:'Notes (optional)',habeas:'I authorize La Heladería to use my name and address only to handle this order, under Colombian Law 1581 of 2012 (data protection). This app stores nothing: your order goes straight to WhatsApp.',enviar:'Send order on WhatsApp',
+ agregar:'Add',agregado:'Added',prod:'items',prod1:'item',vacio:'Nothing here yet. Pick a flavor and a size.',abierto:'Open now · closes at ',cerrado:'Closed now · opens ',hoyA:'today at 11:00 a.m.',mananaA:'tomorrow at 11:00 a.m.',festivo:' (holiday)',faltaNombre:'Please enter your name',faltaDir:'Please enter the delivery address',faltaHabeas:'Please accept the data authorization',addOk:'Added to your order',desde:'from',
+ cinta:['Passion fruit','Pistachio','Kinder Bueno','Oreo','Milo Crunch','Chocoklim','Chocolate','Caramel peanut','From $6,000','Delivery in Caucasia']}};
+
+let L=localGet('lh_lang')||'es', tam='g', cart=JSON.parse(localGet('lh_cart')||'[]'), entrega='recoger', ev=null;
+function localGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function localSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+const $=s=>document.querySelector(s);
+const pesos=n=>'$'+n.toLocaleString('es-CO');
+const nom=s=>typeof s.n==='string'?s.n:s.n[L];
+const t=k=>T[L][k];
+
+/* Hora real de Colombia */
+const FESTIVOS=['2026-11-02','2026-11-16','2026-12-08','2026-12-25','2027-01-01','2027-01-11','2027-03-22','2027-03-25','2027-03-26','2027-05-01','2027-05-10','2027-05-31','2027-06-07','2027-07-05','2027-07-20','2027-08-07','2027-08-16','2027-10-18','2027-11-01','2027-11-15','2027-12-08','2027-12-25'];
+function bogota(){const p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Bogota',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false,weekday:'short'}).formatToParts(new Date());const o={};p.forEach(x=>o[x.type]=x.value);return{fecha:`${o.year}-${o.month}-${o.day}`,h:(+o.hour%24)+(+o.minute)/60,dia:o.weekday}}
+function estado(){
+ const b=bogota(), fest=FESTIVOS.includes(b.fecha), finde=['Sat','Sun'].includes(b.dia)||fest, cierra=finde?18:20;
+ const abierto=b.h>=11&&b.h<cierra;
+ $('#punto').classList.toggle('off',!abierto);
+ const hc=finde?(L==='es'?'6:00 p. m.':'6:00 p.m.'):(L==='es'?'8:00 p. m.':'8:00 p.m.');
+ $('#estado').textContent=abierto?t('abierto')+hc+(fest?t('festivo'):''):t('cerrado')+(b.h<11?t('hoyA'):t('mananaA'));
+ $('#hLV').classList.toggle('hoy',!finde);$('#hSD').classList.toggle('hoy',finde);
+}
+
+function render(){
+ document.documentElement.lang=L;
+ document.querySelectorAll('[data-t]').forEach(e=>{if(T[L][e.dataset.t])e.textContent=T[L][e.dataset.t]});
+ document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===L));
+ const c=t('cinta').map(x=>`<span>${x}</span><em>·</em>`).join('');$('#cinta').innerHTML=c+c;
+ $('#tams').innerHTML=TAM.map(z=>`<div class="tam ${z.id===tam?'on':''}" data-z="${z.id}"><b>${z[L]}</b><span>${z.oz} ${L==='es'?'onzas':'oz'}</span><strong>${pesos(z.precio)}</strong></div>`).join('');
+ const zt=TAM.find(z=>z.id===tam);
+ $('#grid').innerHTML=SAB.map(s=>{const q=cart.filter(i=>i.s===s.id&&i.z===tam).reduce((a,i)=>a+i.q,0);
+  return `<article class="card"><div class="foto"><img src="img/${s.img}.jpg" alt="${nom(s)}" loading="lazy">${s.tag?`<span class="tag">${s.tag[L]}</span>`:''}</div><div class="cuerpo"><h3>${nom(s)}</h3><p>${s[L]}</p><div class="fila"><div class="precio">${pesos(zt.precio)}<small>${zt[L]} · ${zt.oz} oz</small></div>${q?`<div class="qty"><button data-m="${s.id}">−</button><b>${q}</b><button data-a="${s.id}">+</button></div>`:`<button class="add" data-a="${s.id}">${t('agregar')}</button>`}</div></div></article>`}).join('');
+ $('#carril').innerHTML=HEL.map(h=>`<figure><img src="img/${h.img}.jpg" alt="${h[L]}" loading="lazy"><figcaption>${h[L]}<small>La Heladería</small></figcaption></figure>`).join('');
+ $('#gal').innerHTML=GAL.map(g=>`<img src="img/${g}.jpg" alt="La Heladería" loading="lazy">`).join('');
+ $('#chips').innerHTML=EV[L].map((x,i)=>`<button class="chip ${ev===i?'on':''}" data-e="${i}">${x}</button>`).join('');
+ const msgH=L==='es'?'Hola La Heladería, ¿qué sabores de helado tienen hoy?':'Hi La Heladería, which ice cream flavors do you have today?';
+ $('#btnHelado').href=`https://wa.me/${WA}?text=${encodeURIComponent(msgH)}`;
+ $('#btnWaDir').href=`https://wa.me/${WA}?text=${encodeURIComponent(L==='es'?'Hola La Heladería, vi su app y quiero hacer una consulta.':'Hi La Heladería, I saw your app and have a question.')}`;
+ observar();estado();barra();
+}
+function barra(){
+ const n=cart.reduce((a,i)=>a+i.q,0), tot=cart.reduce((a,i)=>a+i.q*TAM.find(z=>z.id===i.z).precio,0);
+ $('#barra').classList.toggle('on',n>0);$('#bTotal').textContent=pesos(tot);$('#bCant').textContent=n+' '+(n===1?t('prod1'):t('prod'));$('#tTotal').textContent=pesos(tot);
+ $('#items').innerHTML=n?cart.map((i,k)=>{const s=SAB.find(x=>x.id===i.s),z=TAM.find(x=>x.id===i.z);return `<div class="item"><img src="img/${s.img}.jpg" alt=""><div><b>${nom(s)}</b><br><small>${z[L]} ${z.oz} oz · ${pesos(z.precio)}</small></div><div class="qty" style="flex:0"><button data-im="${k}">−</button><b>${i.q}</b><button data-ia="${k}">+</button></div></div>`}).join(''):`<p class="vacio">${t('vacio')}</p>`;
+ localSet('lh_cart',JSON.stringify(cart));
+}
+function sumar(s,z,d){const i=cart.find(x=>x.s===s&&x.z===z);if(i){i.q+=d;if(i.q<=0)cart=cart.filter(x=>x!==i)}else if(d>0){cart.push({s,z,q:1});toast(t('addOk'))}render()}
+function toast(m){const e=$('#toast');e.textContent=m;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),1600)}
+
+document.addEventListener('click',e=>{
+ const d=e.target.dataset;
+ if(d.l){L=d.l;localSet('lh_lang',L);render()}
+ if(d.z){tam=d.z;render()}
+ if(d.a){sumar(d.a,tam,1)}
+ if(d.m){sumar(d.m,tam,-1)}
+ if(d.ia!==undefined){cart[+d.ia].q++;barra();render()}
+ if(d.im!==undefined){cart[+d.im].q--;if(cart[+d.im].q<=0)cart.splice(+d.im,1);render()}
+ if(d.e!==undefined){ev=+d.e;render()}
+ if(d.v){entrega=d.v;document.querySelectorAll('#entrega button').forEach(b=>b.classList.toggle('on',b.dataset.v===entrega));$('#campoDir').style.display=$('#avisoDom').style.display=entrega==='domicilio'?'block':'none'}
+ if(e.target.closest('#gal')&&e.target.tagName==='IMG'){$('#visorImg').src=e.target.src;$('#visor').classList.add('on')}
+});
+$('#cerrarVisor').onclick=()=>$('#visor').classList.remove('on');
+$('#verPedido').onclick=()=>$('#hoja').classList.add('on');
+$('#cerrarHoja').onclick=()=>$('#hoja').classList.remove('on');
+$('#hoja').onclick=e=>{if(e.target.id==='hoja')$('#hoja').classList.remove('on')};
+
+$('#enviar').onclick=()=>{
+ if(!cart.length)return toast(t('vacio'));
+ const nombre=$('#cNombre').value.trim(),dir=$('#cDir').value.trim();
+ if(!nombre)return toast(t('faltaNombre'));
+ if(entrega==='domicilio'&&!dir)return toast(t('faltaDir'));
+ if(!$('#cHabeas').checked)return toast(t('faltaHabeas'));
+ const es=L==='es';let tot=0;
+ const lin=cart.map(i=>{const s=SAB.find(x=>x.id===i.s),z=TAM.find(x=>x.id===i.z);tot+=i.q*z.precio;return `• ${i.q} x ${nom(s)} ${z[L]} (${z.oz} oz) = ${pesos(i.q*z.precio)}`}).join('\n');
+ let m=(es?'Hola La Heladería, quiero hacer este pedido:\n\n':'Hi La Heladería, I\'d like to order:\n\n')+lin+`\n\n*Total: ${pesos(tot)}*\n\n`+(es?'Nombre: ':'Name: ')+nombre+'\n'+(entrega==='domicilio'?(es?'Domicilio a: ':'Deliver to: ')+dir:(es?'Recojo en el local':'Pick up at the shop'));
+ const n=$('#cNotas').value.trim();if(n)m+='\n'+(es?'Notas: ':'Notes: ')+n;
+ m+='\n\n'+(es?'(Pedido enviado desde la app de La Heladería)':'(Sent from the La Heladería app)');
+ window.open(`https://wa.me/${WA}?text=${encodeURIComponent(m)}`,'_blank');
+};
+$('#btnCotizar').onclick=()=>{
+ const es=L==='es',c=$('#evCant').value,f=$('#evFecha').value,n=$('#evNota').value.trim();
+ let m=(es?'Hola La Heladería, quiero cotizar mini cucharables':'Hi La Heladería, I\'d like a quote for mini spoonables');
+ if(ev!==null)m+=(es?' para ':' for ')+EV[L][ev].toLowerCase();
+ m+='.';if(c)m+='\n'+(es?'Cantidad: ':'Quantity: ')+c;if(f)m+='\n'+(es?'Fecha: ':'Date: ')+f;if(n)m+='\n'+(es?'Detalles: ':'Details: ')+n;
+ window.open(`https://wa.me/${WA}?text=${encodeURIComponent(m)}`,'_blank');
+};
+
+/* Portada en movimiento */
+const sl=[...document.querySelectorAll('.slide')];let si=0;
+$('#dots').innerHTML=sl.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('');
+setInterval(()=>{sl[si].classList.remove('on');document.querySelectorAll('#dots i')[si].classList.remove('on');si=(si+1)%sl.length;sl[si].classList.add('on');document.querySelectorAll('#dots i')[si].classList.add('on')},5000);
+addEventListener('scroll',()=>$('#top').classList.toggle('solid',scrollY>60),{passive:true});
+let io;function observar(){io=io||new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('ver');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.card:not(.ver)').forEach((c,i)=>{c.style.transitionDelay=(i%4)*80+'ms';io.observe(c)})}
+setInterval(estado,60000);
+
+/* PWA */
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+let dp;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;$('#btnInstalar').style.display='inline-flex'});
+$('#btnInstalar').onclick=async()=>{if(!dp)return;dp.prompt();await dp.userChoice;dp=null;$('#btnInstalar').style.display='none'};
+
+render();
+</script>
+</body>
+</html>
