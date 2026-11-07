@@ -6,7 +6,7 @@ Cliente de **ExpoCaucasia 2026**.
 - Instagram: [@laheladeria.09](https://www.instagram.com/laheladeria.09/)
 - WhatsApp: 321 794 98 91
 - Dirección: Calle 29 con Carrera 19, detrás de Promedan, La Ye, Caucasia
-- App: https://la-heladeria-caucasia.netlify.app
+- App: https://la-heladeria-caucasi.netlify.app
 
 ## Qué trae
 - Portada con fotos reales en movimiento y aviso de **abierto / cerrado** con la hora real de Colombia (incluye festivos)
@@ -24,7 +24,7 @@ img/  (fotos de los productos y el logo)
 
 ## Publicar
 1. Subir todos los archivos (con la carpeta `img/`) al repo `haroldco45/la-heladeria-caucasia`.
-2. En Netlify, conectar el repo con el nombre de sitio `la-heladeria-caucasia`.
+2. En Netlify, conectar el repo con el nombre de sitio `la-heladeria-caucasi`.
    Si se usa otro nombre, cambiar la URL en las etiquetas `og:` y `twitter:` de `index.html`.
 
 ## Licencia
